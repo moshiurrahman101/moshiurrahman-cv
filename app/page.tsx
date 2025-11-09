@@ -145,7 +145,7 @@ export default function Home() {
               <a href="https://github.com/moshiurrahman101" target='_blank' className="p-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
                 <FiGithub className="w-5 h-5" />
               </a>
-              <a href="https://github.com/moshiurrahman101" target='_blank' className="p-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/in/moshiurrahman101" target='_blank' className="p-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
                 <FiLinkedin className="w-5 h-5" />
               </a>
             </div>
