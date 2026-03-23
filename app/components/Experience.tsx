@@ -7,7 +7,7 @@ export default function Experience() {
       position: 'Technical Institute Teacher',
       company: 'National Institute of Engineering & Technology (NIET)',
       location: 'Dhaka, Bangladesh',
-      period: 'Feb 2020 - Present',
+      period: 'May 2022 - Present',
       responsibilities: [
         'Teaching programming, networking, and operating systems',
         'Supervising student projects and practical sessions',
