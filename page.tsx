@@ -1,11 +1,10 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  const sections = ["about", "experience", "education", "publications", "projects", "skills", "awards", "languages"];
+  const sections = ["about", "experience", "education", "publications", "projects", "skills", "awards", "languages", "references"];
 
   return (
     <main className="cv-root">
@@ -13,7 +12,7 @@ export default function Home() {
       <aside className="sidebar">
         <div className="profile-block">
           <div className="avatar-ring">
-          <Image src="/logo.png" alt="Md. Moshiur Rahman" width={90} height={90} style={{ borderRadius: '50%', objectFit: 'cover' }} />
+            <div className="avatar-initials">MR</div>
           </div>
           <h1 className="name">Md. Moshiur<br />Rahman</h1>
           <p className="title-tag">CS Instructor · Researcher</p>
@@ -59,54 +58,14 @@ export default function Home() {
         {/* About */}
         <section id="about" className="section">
           <h2 className="section-title">About Me</h2>
-
           <p className="about-text">
-            Hello! I am a passionate <strong>Computer Science Engineer</strong> and <strong>IoT Researcher</strong>,
-            currently working as a <strong>Computer Science Instructor</strong> at the{" "}
-            <a href="https://niet.edu.bd/" target="_blank" className="inline-link">National Institute of Engineering &amp; Technology (NIET)</a>.
-            I completed my <strong>Bachelor of Science in Computer Science &amp; Engineering</strong> at Dhaka International
-            University and hold a <strong>Diploma in Engineering</strong> from NIET.
+            I recently completed my Bachelor&apos;s in Computer Science and Engineering and currently work as a
+            <strong> Computer Science Instructor</strong> at NIET. My interests span
+            <strong> embedded systems</strong>, <strong>IoT technologies</strong>, <strong>software development</strong>,
+            and <strong>intelligent computing systems</strong>. During my studies, I developed an IoT-based navigation
+            system for visually impaired individuals, resulting in a conference publication in
+            <strong> Springer Lecture Notes in Networks and Systems</strong>.
           </p>
-
-          <p className="about-text">
-            My primary research focus is on developing <strong>IoT-based assistive systems</strong> and intelligent
-            solutions for real-world challenges. I designed and implemented an IoT-based navigation and safety system
-            for visually impaired individuals — combining embedded systems, sensor technology, and real-time object
-            detection to enhance mobility and independence. This research was{" "}
-            <strong>published at the 3rd International Conference on Big Data, IoT and Machine Learning (BIM 2025)</strong>{" "}
-            in <strong>Springer Lecture Notes in Networks and Systems (LNNS)</strong>.
-          </p>
-
-          <p className="about-text">
-            Alongside my research, I have hands-on experience in <strong>web development and system design</strong>,
-            having built and deployed multiple platforms including an EdTech system{" "}
-            (<a href="https://www.creativecanvasit.com/" target="_blank" className="inline-link">Creative Canvas IT</a>)
-            and a financial management system{" "}
-            (<a href="https://www.trustonventure.com/" target="_blank" className="inline-link">Trust on Venture</a>).
-            My work spans from low-level embedded systems to full-stack web applications, reflecting a comprehensive
-            understanding of the computing stack.
-          </p>
-
-          <p className="about-text">
-            I am deeply passionate about emerging technologies and their practical applications. I am particularly
-            interested in how <strong>IoT and AI can be combined</strong> to create intelligent systems that improve
-            quality of life — especially for underserved communities. I am also an active{" "}
-            <strong>competitive programmer</strong>, having participated in the ICPC for four consecutive years
-            (2021–2024).
-          </p>
-
-          <p className="about-text">
-            I am actively seeking opportunities to pursue a <strong>Master of Science in Computer Science or
-            Software Engineering</strong> at a reputed European university, where I can further develop my research
-            skills and contribute to innovative projects in intelligent systems and human-computer interaction.
-          </p>
-
-          <p className="about-text">
-            I am always open to <strong>collaboration and discussion</strong> about research, web development, or
-            IoT systems. If you have opportunities for academic collaboration or just want to connect, feel free
-            to <a href="mailto:moshiurrahman.cse.428@gmail.com" className="inline-link">reach out</a>!
-          </p>
-
           <div className="info-chips">
             <span className="chip">📅 Born: 15 June 1999</span>
             <span className="chip">🌍 Dhaka, Bangladesh</span>
@@ -348,10 +307,38 @@ export default function Home() {
             </div>
             <div className="lang-item">
               <span className="lang-name">English</span>
-              <span className="lang-level professional">Professional Proficiency</span>
+              <span className="lang-level professional">Professional Proficiency · IELTS 6.0</span>
             </div>
           </div>
         </section>
+
+        {/* References */}
+        <section id="references" className="section">
+          <h2 className="section-title">References</h2>
+          <div className="ref-grid">
+            <div className="ref-card">
+              <h3>Md. Tahzib Ul Islam</h3>
+              <p className="ref-role">Associate Professor, Dept. of CSE</p>
+              <p className="ref-org">Dhaka International University (DIU)</p>
+              <p className="ref-relation">Thesis Supervisor &amp; Research Mentor</p>
+              <div className="ref-contacts">
+                <a href="mailto:tahzib.cse@diu.ac">tahzib.cse@diu.ac</a>
+                <span>(+880) 01717041584</span>
+              </div>
+            </div>
+            <div className="ref-card">
+              <h3>Prof. Dr. A.T.M Mahbubur Rahman Sarker</h3>
+              <p className="ref-role">Dean, Faculty of Science &amp; Engineering</p>
+              <p className="ref-org">Dhaka International University (DIU)</p>
+              <p className="ref-relation">Faculty Dean &amp; Course Instructor</p>
+              <div className="ref-contacts">
+                <a href="mailto:rahman.cse@diu.ac">rahman.cse@diu.ac</a>
+                <span>(+880) 1720557279</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
 
       <style>{`
