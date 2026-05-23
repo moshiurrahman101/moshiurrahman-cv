@@ -2,14 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Avatar from "@/components/Avatar";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Globe,
-  Menu,
-  X,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Menu, X } from "lucide-react";
+import { ProfileLinkSidebarItems } from "@/components/ProfileLinks";
 import { navSections, profile, SITE_URL } from "@/lib/cv-data";
 
 export default function Sidebar() {
@@ -83,6 +77,7 @@ export default function Sidebar() {
         <Globe className="h-4 w-4 shrink-0 text-accent/70" />
         <span className="truncate">moshiurrahman-cv.vercel.app</span>
       </a>
+      <ProfileLinkSidebarItems />
       <div className="flex items-center gap-2.5">
         <MapPin className="h-4 w-4 shrink-0 text-accent/70" />
         <span>{profile.location}</span>

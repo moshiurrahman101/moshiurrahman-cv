@@ -1,4 +1,4 @@
-import { profile, publications, SITE_URL } from "./cv-data";
+import { profile, profileLinks, publications, SITE_URL } from "./cv-data";
 
 export function personJsonLd() {
   const pub = publications[0];
@@ -37,7 +37,7 @@ export function personJsonLd() {
       "Full-Stack Web Development",
       "Embedded Systems",
     ],
-    sameAs: ["https://icpc.global/ICPCID/3PZDUGT233SG"],
+    sameAs: profileLinks.map((link) => link.href),
     author: pub
       ? {
           "@type": "ScholarlyArticle",

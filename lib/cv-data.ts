@@ -1,5 +1,33 @@
 export const SITE_URL = "https://moshiurrahman-cv.vercel.app";
 
+export const GOOGLE_SCHOLAR_URL =
+  "https://scholar.google.com/citations?user=72i46BIAAAAJ&hl=en";
+
+export const ICPC_PROFILE_URL =
+  "https://icpc.global/ICPCID/3PZDUGT233SG";
+
+export const LINKEDIN_URL = "https://www.linkedin.com/in/moshiurrahman101/";
+
+export type ProfileLinkIcon = "scholar" | "icpc" | "linkedin";
+
+export const profileLinks = [
+  {
+    label: "Google Scholar",
+    href: GOOGLE_SCHOLAR_URL,
+    icon: "scholar" as const,
+  },
+  {
+    label: "ICPC Profile",
+    href: ICPC_PROFILE_URL,
+    icon: "icpc" as const,
+  },
+  {
+    label: "LinkedIn",
+    href: LINKEDIN_URL,
+    icon: "linkedin" as const,
+  },
+];
+
 export const profile = {
   name: "Md. Moshiur Rahman",
   shortName: "Moshiur Rahman",
@@ -162,7 +190,7 @@ export const awards = [
     title: "ICPC Participant (2021–2024)",
     org: "International Collegiate Programming Contest — four consecutive regional years",
     year: "2021–24",
-    url: "https://icpc.global/ICPCID/3PZDUGT233SG",
+    url: ICPC_PROFILE_URL,
     urlLabel: "ICPC Profile",
   },
 ];
@@ -172,8 +200,3 @@ export const languages = [
   { name: "English", level: "Professional Proficiency", variant: "professional" as const },
 ];
 
-export const socialLinks = [
-  { label: "Email", href: `mailto:${profile.email}` },
-  { label: "Website", href: SITE_URL },
-  { label: "ICPC", href: "https://icpc.global/ICPCID/3PZDUGT233SG" },
-];

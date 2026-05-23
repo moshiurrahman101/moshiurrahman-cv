@@ -7,12 +7,14 @@ import {
   Languages,
   Sparkles,
 } from "lucide-react";
+import { ProfileLinkButtons } from "@/components/ProfileLinks";
 import {
   aboutContent,
   awards,
   education,
   experience,
   languages,
+  GOOGLE_SCHOLAR_URL,
   profile,
   projects,
   publications,
@@ -23,13 +25,18 @@ function SectionHeader({
   id,
   icon: Icon,
   children,
+  className = "",
 }: {
   id: string;
   icon: React.ComponentType<{ className?: string }>;
   children: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <header className="mb-6 flex items-center gap-3 scroll-mt-24" id={id}>
+    <header
+      className={`mb-6 flex items-center gap-3 scroll-mt-24 ${className}`}
+      id={id}
+    >
       <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent">
         <Icon className="h-4 w-4" aria-hidden />
       </div>
@@ -63,6 +70,7 @@ export default function CvContent() {
             </span>
           ))}
         </div>
+        <ProfileLinkButtons className="mt-4" />
       </section>
 
       {/* About */}
@@ -241,9 +249,20 @@ export default function CvContent() {
 
       {/* Publications */}
       <section id="publications" className="scroll-mt-24">
-        <SectionHeader id="publications-heading" icon={BookOpen}>
-          Publications
-        </SectionHeader>
+        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <SectionHeader id="publications-heading" icon={BookOpen} className="mb-0">
+            Publications
+          </SectionHeader>
+          <a
+            href={GOOGLE_SCHOLAR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-accent hover:underline sm:-mt-2"
+          >
+            View Google Scholar profile
+            <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+          </a>
+        </div>
         {publications.map((pub) => (
           <article
             key={pub.doi}
@@ -299,15 +318,26 @@ export default function CvContent() {
                   <li key={h}>{h}</li>
                 ))}
               </ul>
-              <a
-                href={pub.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
-              >
-                Read on Springer Nature
-                <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-              </a>
+              <div className="mt-4 flex flex-wrap gap-4">
+                <a
+                  href={pub.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+                >
+                  Read on Springer Nature
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                </a>
+                <a
+                  href={GOOGLE_SCHOLAR_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-accent hover:underline"
+                >
+                  Google Scholar
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                </a>
+              </div>
             </div>
           </article>
         ))}
