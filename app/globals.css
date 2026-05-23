@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-syne);
+  --color-bg: #080b12;
+  --color-bg-elevated: #0e121c;
+  --color-surface: #121827;
+  --color-surface-hover: #171f30;
+  --color-border: #243044;
+  --color-border-subtle: #1a2436;
+  --color-text: #eef2f8;
+  --color-muted: #8b9ab5;
+  --color-accent: #22d3ee;
+  --color-accent-dim: #0891b2;
+  --color-violet: #a78bfa;
+  --color-emerald: #34d399;
+  --color-amber: #fbbf24;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-text antialiased;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 211, 238, 0.12), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(167, 139, 250, 0.08), transparent);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(34, 211, 238, 0.25);
+    color: #fff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .glass {
+    @apply border border-border-subtle bg-surface/80 backdrop-blur-xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent via-white to-violet bg-clip-text text-transparent;
+  }
+
+  .section-heading {
+    font-family: var(--font-display), system-ui, sans-serif;
+    @apply text-2xl font-bold tracking-tight md:text-[1.65rem];
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:border-accent/40 hover:shadow-[0_8px_32px_-8px_rgba(34,211,238,0.15)];
+  }
+
+  .font-display {
+    font-family: var(--font-syne), system-ui, sans-serif;
+  }
 }
